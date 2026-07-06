@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="850.0" stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.expensetracker.controller.ReportController">
+
+    <top>
+        <VBox spacing="8" style="-fx-background-color: #0F172A; -fx-padding: 20;">
+            <Label text="📈 Advanced Analytics Portal" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Label text="Visual categorization analytics based on your real-time ledger records." style="-fx-text-fill: #94A3B8; -fx-font-size: 12px;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="25" style="-fx-padding: 25; -fx-background-color: #F8FAFC;">
+
+            <VBox spacing="15" prefWidth="220" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;">
+                <Label text="Chart Options" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #1E293B;"/>
+                <Separator/>
+
+                <Button text="🔄 Refresh Chart" onAction="#handleRefreshChart" maxWidth="Infinity"
+                        style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-padding: 10 15; -fx-font-weight: bold; -fx-cursor: hand;"/>
+
+                <Button text="❌ Close Report" onAction="#handleClose" maxWidth="Infinity"
+                        style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-padding: 10 15; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            </VBox>
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8;" alignment="CENTER">
+                <Label text="📊 Expense Distribution Breakdown" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0F172A;"/>
+                <Separator style="-fx-opacity: 0.5;"/>
+
+                <PieChart fx:id="reportPieChart" legendVisible="true" labelsVisible="true" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>

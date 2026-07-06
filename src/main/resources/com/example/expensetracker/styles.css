@@ -1,0 +1,108 @@
+/* Core Variables & Global Styling */
+.root {
+    -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    -fx-background-color: #F8FAFC; /* Clean, light grayish-blue background */
+}
+
+/* Form Elements */
+.text-input, .combo-box, .date-picker {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 6;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 10 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1E293B;
+}
+.text-input:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #6366F1; /* Modern Indigo focus ring */
+    -fx-background-color: #FFFFFF;
+}
+
+/* Elegant Buttons */
+.primary-button {
+    -fx-background-color: #6366F1; /* Indigo vibrant accent */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+.primary-button:hover {
+    -fx-background-color: #4F46E5;
+}
+
+/* Beautiful Sidebar Layout */
+.sidebar {
+    -fx-background-color: #0F172A; /* Slate Navy Blue */
+    -fx-padding: 24 16;
+}
+.sidebar-brand {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 8;
+}
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94A3B8; /* Muted slate gray text */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-padding: 12 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.sidebar-btn:hover {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: #F1F5F9;
+}
+
+/* Modern Analytics Cards */
+.card-total-expense {
+    -fx-background-color: linear-gradient(to bottom right, #10B981, #059669); /* Rich Emerald Gradient */
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.2), 10, 0, 0, 4);
+}
+
+/* Clean Data Tables */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-padding: 5;
+}
+.table-view .column-header {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+}
+.table-view .table-cell {
+    -fx-padding: 12;
+    -fx-text-fill: #334155;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+}
+
+/* Authentication Layout Elements */
+.switch-link {
+    -fx-text-fill: #6366F1;
+    -fx-underline: false;
+    -fx-font-weight: bold;
+}
+.switch-link:hover {
+    -fx-text-fill: #4F46E5;
+}
+/* Generates spacious row heights and pads text nicely from column borders */
+.table-view .table-cell {
+    -fx-padding: 10px 14px 10px 14px; /* Top, Right, Bottom, Left margins inside rows */
+    -fx-alignment: center-left;
+}
+
+/* Also adds comfortable padding inside the table header titles */
+.table-view .column-header .label {
+    -fx-padding: 8px 0px 8px 0px;
+}

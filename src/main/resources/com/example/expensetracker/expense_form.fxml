@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15.0" alignment="CENTER_LEFT" prefWidth="360.0" prefHeight="420.0"
+      stylesheets="@styles.css" style="-fx-background-color: #FFFFFF; -fx-padding: 30;"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.expensetracker.controller.ExpenseController">
+
+    <Label fx:id="formTitle" text="Log New Expense" style="-fx-font-size: 20px; -fx-font-weight: 800; -fx-text-fill: #0F172A;"/>
+    <Separator style="-fx-opacity: 0.5;"/>
+
+    <VBox spacing="6">
+        <Label text="Transaction Amount ($)" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+        <TextField fx:id="amountField" promptText="0.00"/>
+    </VBox>
+
+    <VBox spacing="6">
+        <Label text="Category Classification" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+        <ComboBox fx:id="categoryComboBox" maxWidth="Infinity" promptText="Select Category"/>
+    </VBox>
+
+    <VBox spacing="6">
+        <Label text="Statement Date" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+        <DatePicker fx:id="datePicker" maxWidth="Infinity" promptText="Choose Date"/>
+    </VBox>
+
+    <VBox spacing="6">
+        <Label text="Reference Description" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+        <TextField fx:id="descField" promptText="e.g. Grocery dinner receipt"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button text="Save Transaction" onAction="#handleSave" styleClass="primary-button" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+    </HBox>
+</VBox>

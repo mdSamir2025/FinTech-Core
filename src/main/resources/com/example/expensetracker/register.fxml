@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.expensetracker.controller.RegisterController"
+      stylesheets="@styles.css" prefWidth="380.0" prefHeight="480.0" style="-fx-background-color: #FFFFFF;">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="Create Account" style="-fx-font-size: 24px; -fx-font-weight: 800; -fx-text-fill: #0F172A;"/>
+        <Label text="Join us to take control of your savings" style="-fx-font-size: 13px; -fx-text-fill: #64748B;"/>
+    </VBox>
+
+    <VBox spacing="12.0" fillWidth="true">
+        <TextField fx:id="usernameField" promptText="Choose Username" styleClass="input-field"/>
+        <PasswordField fx:id="passwordField" promptText="Choose Password" styleClass="input-field"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" styleClass="input-field"/>
+    </VBox>
+
+    <VBox alignment="CENTER" spacing="15" fillWidth="true">
+        <Button fx:id="registerButton" text="Sign Up" onAction="#handleRegister" maxWidth="Infinity" styleClass="primary-button"/>
+        <Hyperlink text="Already have an account? Back to Login" onAction="#handleNavigateToLogin" styleClass="switch-link"/>
+    </VBox>
+</VBox>

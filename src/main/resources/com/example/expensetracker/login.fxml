@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.expensetracker.controller.LoginController" stylesheets="@styles.css" prefWidth="380.0" prefHeight="480.0" style="-fx-background-color: #FFFFFF;">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <ImageView fx:id="logoImageView" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@logo.png" />
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="Welcome Back" style="-fx-font-size: 24px; -fx-font-weight: 800; -fx-text-fill: #0F172A;"/>
+        <Label text="Sign in to track your daily budget" style="-fx-font-size: 13px; -fx-text-fill: #64748B;"/>
+    </VBox>
+
+    <VBox spacing="12.0" fillWidth="true">
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+    </VBox>
+
+    <Button fx:id="loginButton" text="Sign In" onAction="#handleLogin" maxWidth="Infinity" styleClass="primary-button"/>
+    <Hyperlink text="Don't have an account? Register here" onAction="#handleNavigateToRegister" styleClass="switch-link"/>
+</VBox>

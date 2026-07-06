@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="850.0" prefHeight="580.0"
+            stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.expensetracker.controller.SettingsController">
+
+    <left>
+        <VBox spacing="12" style="-fx-background-color: #1E293B; -fx-padding: 20;" prefWidth="250.0">
+            <Label text="⚙️ Settings Menu" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Separator style="-fx-opacity: 0.1; -fx-padding: 5 0;"/>
+
+            <Button text="🛡️ Budget &amp; Security" onAction="#showBudgetSecurity" maxWidth="Infinity"
+                    style="-fx-alignment: BASELINE_LEFT; -fx-cursor: hand; -fx-padding: 12 15; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+
+            <Button text="📂 Category Manager" onAction="#showCategoryManager" maxWidth="Infinity"
+                    style="-fx-alignment: BASELINE_LEFT; -fx-cursor: hand; -fx-padding: 12 15; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+
+            <Button text="🚨 Data Core Reset" onAction="#showDataReset" maxWidth="Infinity"
+                    style="-fx-alignment: BASELINE_LEFT; -fx-cursor: hand; -fx-padding: 12 15; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="System Version 1.0.0" style="-fx-text-fill: #64748B; -fx-font-size: 11px;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #FFFFFF; -fx-padding: 30;">
+            <children>
+
+                <VBox fx:id="panelBudgetSecurity" spacing="15" visible="true">
+                    <Label text="Monthly Threshold Limit Control" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0F172A;"/>
+                    <Label text="Set a monthly allowance cap. The system will alert you when spending nears this value." style="-fx-text-fill: #64748B; -fx-font-size: 12px;" wrapText="true"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="budgetLimitField" promptText="0.00" prefWidth="180" style="-fx-padding: 8;"/>
+                        <Button text="Save Limit" onAction="#handleUpdateBudget" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+                    </HBox>
+                    <Separator style="-fx-padding: 15 0;"/>
+                    <Label text="Modify System Password Verification" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0F172A;"/>
+                    <VBox spacing="10" maxWidth="350">
+                        <PasswordField fx:id="oldPasswordField" promptText="Current Password" style="-fx-padding: 8;"/>
+                        <PasswordField fx:id="newPasswordField" promptText="New Secure Password" style="-fx-padding: 8;"/>
+                        <Button text="Update Password" onAction="#handleChangePassword" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+                    </VBox>
+                </VBox>
+
+                <VBox fx:id="panelCategoryManager" spacing="15" visible="false">
+                    <Label text="Dynamic Core Category Allocation" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0F172A;"/>
+                    <Label text="Add custom transaction filters (e.g., Rent, Medical) or remove redundant ones." style="-fx-text-fill: #64748B; -fx-font-size: 12px;" wrapText="true"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="newCategoryField" promptText="New Category Name" prefWidth="200" style="-fx-padding: 8;"/>
+                        <Button text="Add New" onAction="#handleAddCategory" style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+                    </HBox>
+                    <ListView fx:id="categoryListView" VBox.vgrow="ALWAYS" style="-fx-background-radius: 6;"/>
+                    <HBox alignment="CENTER_RIGHT">
+                        <Button text="Delete Selected" onAction="#handleDeleteCategory" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="panelDataReset" spacing="20" visible="false" alignment="CENTER">
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Label text="⚠️ Danger Zone: Destructive Actions" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #EF4444;"/>
+                    <Label text="This operation wipes out all historical expense logs, deposited incomes, and custom allocations associated with your account from the database cluster. This action is irreversible."
+                           alignment="CENTER" textAlignment="CENTER" wrapText="true" style="-fx-text-fill: #64748B; -fx-font-size: 13px; -fx-max-width: 450;"/>
+                    <Button text="🚨 WIPE ALL SYSTEM TRANSACTIONS" onAction="#handleWipeData"
+                            style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 14 28; -fx-background-radius: 6; -fx-cursor: hand;"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
