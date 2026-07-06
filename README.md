@@ -35,7 +35,6 @@ To avoid application lag, the frontend architecture implements single-stage fram
 ## 🛠️ Technical Stack & Framework Specs
 
 *   **UI Framework:** JavaFX 26 & FXML for hardware-accelerated rendering.
-*   **Typography & Icons:** Fully integrated with **Font Awesome (v4.7.0)**. Vector glyph symbols are safely loaded via CSS `@font-face` rules, completely bypassing the need for fragile system emojis and guaranteeing an identical, un-fragmented UI layout across Windows, macOS, and Linux.
 *   **Design Pattern:** Strict adherence to the **Model-View-Controller (MVC)** design architecture to isolate structural computational logic from presentation layouts.
 *   **Persistence Layer:** Relational **MySQL** instance running an optimized **JDBC (Java Database Connectivity)** driver stack utilizing the **DAO (Data Access Object)** pattern.
 *   **UI Enhancement:** Structured styling hooks using explicit CSS rule sheets (`-fx-padding`, `-fx-cursor: hand`) to build rich, scalable, and professional UI touchpoints.
@@ -69,5 +68,4 @@ src/
             ├── report_view.fxml
             ├── settings.fxml
             ├── styles.css
-            └── fonts/
-                └── fontawesome-webfont.ttf
+          
