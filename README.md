@@ -41,31 +41,4 @@ To avoid application lag, the frontend architecture implements single-stage fram
 
 ---
 
-## 📂 Project Directory Structure
 
-```text
-src/
-└── main/
-    ├── java/
-    │   └── com/example/expensetracker/
-    │       ├── MainApp.java
-    │       ├── controller/
-    │       │   ├── DashboardController.java
-    │       │   ├── IncomeController.java
-    │       │   ├── ReportController.java
-    │       │   └── SettingsController.java
-    │       ├── dao/
-    │       │   ├── DatabaseConnection.java
-    │       │   ├── ExpenseDAO.java
-    │       │   └── IncomeDAO.java
-    │       └── model/
-    │           ├── Expense.java
-    │           └── Income.java
-    └── resources/
-        └── com/example/expensetracker/
-            ├── dashboard.fxml
-            ├── income_form.fxml
-            ├── report_view.fxml
-            ├── settings.fxml
-            ├── styles.css
-          
